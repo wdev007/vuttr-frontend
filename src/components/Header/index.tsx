@@ -1,9 +1,22 @@
 import React from 'react';
+import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
+
+import { Title, SubTitle, SearchBar, Search, Check } from './styles';
 
 const HeaderComponent: React.FC = () => (
   <header>
-    <h1>VUTTR</h1>
-    <h4>Very Userful Tools Remember</h4>
+    <Title>VUTTR</Title>
+    <SubTitle>Very Userful Tools Remember</SubTitle>
+
+    <SearchBar>
+      <div>
+        <Search prefix={<SearchOutlined />} placeholder="search" />
+        <Check>search in tags only</Check>
+      </div>
+      <button type="button">
+        <PlusOutlined /> Add
+      </button>
+    </SearchBar>
   </header>
 );
 
