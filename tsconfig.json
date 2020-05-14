@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "outDir": "build/lib",
     "rootDirs": ["src", "stories"],
     "target": "es5",

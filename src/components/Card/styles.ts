@@ -9,6 +9,10 @@ export const CardContainer = styled.div`
   border-radius: 5px;
   transition: transform 0.2s;
 
+  & + div {
+    margin-top: 10px;
+  }
+
   &:hover {
     transform: translateX(5px);
     box-shadow: 0px 5px 7px #0000000d;

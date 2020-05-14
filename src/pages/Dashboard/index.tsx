@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import api from '../../services/api';
 
 import Header from '../../components/Header';
 import Card from '../../components/Card';
-// import Tool from '../../models/tool';
+import { Tool } from '../../models/tool';
 
 const Dashboard: React.FC = () => {
-  // const [tools, setTools] = useState<Array<Tool>>([]);
+  const [tools, setTools] = useState<Array<Tool>>([]);
 
-  // useEffect(() => {
-
-  // }, []);
+  useEffect(() => {
+    async function loadData(): Promise<void> {
+      const { data } = await api.get<Array<Tool>>('/tools');
+      setTools(prevTools => [...prevTools, ...data]);
+    }
+    loadData();
+  }, []);
 
   return (
     <>
       <Header />
-      <Card
-        id="eae"
-        title="olá mundo"
-        description="aeae doisdo afaf andk sdan ds"
-        link="www.google.com"
-        tags={['ola', 'eaew']}
-      />
+      {tools.map(tool => (
+        <Card
+          id={tool.id}
+          key={tool.id}
+          title={tool.title}
+          description={tool.description}
+          link={tool.link || ''}
+          tags={tool.tags}
+        />
+      ))}
     </>
   );
 };

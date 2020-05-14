@@ -4,7 +4,7 @@ import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 import { Title, SubTitle, SearchBar, Search, Check } from './styles';
 
 const HeaderComponent: React.FC = () => (
-  <header>
+  <header data-testid="app-header">
     <Title>VUTTR</Title>
     <SubTitle>Very Userful Tools Remember</SubTitle>
 
