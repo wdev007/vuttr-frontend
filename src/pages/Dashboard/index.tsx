@@ -25,7 +25,7 @@ const Dashboard: React.FC = () => {
           key={tool.id}
           title={tool.title}
           description={tool.description}
-          link={tool.link || ''}
+          link={tool.link}
           tags={tool.tags}
         />
       ))}

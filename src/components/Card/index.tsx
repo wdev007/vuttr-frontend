@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import PropTypes from 'prop-types';
 
 import { Tool } from '../../models/tool';
 import { CardContainer, ButtonRemove } from './styles';
@@ -8,7 +7,7 @@ import { CardContainer, ButtonRemove } from './styles';
 const CardComponent: React.FC<Tool> = ({
   id,
   title,
-  link,
+  link = '',
   description,
   tags,
 }) => (
@@ -23,11 +22,5 @@ const CardComponent: React.FC<Tool> = ({
     {tags.length && tags?.map(tag => <strong key={tag}>#{tag}</strong>)}
   </CardContainer>
 );
-
-CardComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-};
 
 export default CardComponent;

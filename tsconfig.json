@@ -3,7 +3,7 @@
     "baseUrl": "src",
     "outDir": "build/lib",
     "rootDirs": ["src", "stories"],
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
