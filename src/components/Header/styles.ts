@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { Input, Checkbox } from 'antd';
 
 export const Title = styled.h1`
-  font: Semibold 26px/32px Source Sans Pro;
+  font-size: 42px;
   color: #170c3a;
-  opacity: 1;
 `;
 
-export const SubTitle = styled.h4``;
+export const SubTitle = styled.h4`
+  font-size: 30px;
+  color: #170c3a;
+`;
 
 export const SearchBar = styled.div`
   display: flex;
@@ -26,7 +28,7 @@ export const SearchBar = styled.div`
   button {
     width: 174px;
     height: 50px;
-
+    font-size: 18px;
     margin-left: auto;
     background: #365df0 0% 0% no-repeat padding-box;
     color: #fff;
@@ -37,6 +39,9 @@ export const SearchBar = styled.div`
 
   button:hover {
     background: #2f55cc 0% 0% no-repeat padding-box;
+  }
+  button:active {
+    background: #244aa8 0% 0% no-repeat padding-box;
   }
 `;
 
@@ -57,7 +62,7 @@ export const Search = styled(Input)`
   input::placeholder {
     width: 270px;
     height: 25px;
-
+    font-size: 20px;
     letter-spacing: 0.4px;
     color: #b1adb9;
     opacity: 1;
@@ -68,6 +73,6 @@ export const Check = styled(Checkbox)`
   width: 250px;
 
   color: #170c3a;
-  font: Regular 20px/26px Source Sans Pro;
+  font-size: 14px;
   margin-left: 10px;
 `;
