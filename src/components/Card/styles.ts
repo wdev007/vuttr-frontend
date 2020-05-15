@@ -21,8 +21,12 @@ export const CardContainer = styled.div`
   div {
     display: flex;
     justify-content: space-between;
+  }
 
-    margin: 5px 5px 0;
+  div,
+  p,
+  strong {
+    margin: 8px 8px 0;
   }
 `;
 

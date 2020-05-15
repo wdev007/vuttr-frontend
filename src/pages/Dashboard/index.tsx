@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 import api from '../../services/api';
 
+import AppContext from '../../contexts/app';
 import Header from '../../components/Header';
 import Card from '../../components/Card';
+import Modal from '../../components/Modal';
 import { Tool } from '../../models/tool';
 
 const Dashboard: React.FC = () => {
+  const { visible, setVisible } = useContext(AppContext);
   const [tools, setTools] = useState<Array<Tool>>([]);
 
   useEffect(() => {
@@ -29,6 +33,17 @@ const Dashboard: React.FC = () => {
           tags={tool.tags}
         />
       ))}
+      <Modal
+        iconTitle={AiOutlineClose}
+        visible={visible}
+        onCancel={() => setVisible(false)}
+        title="Add new tool"
+        onOk={() => {
+          console.log('aq');
+        }}
+        okText="Add tool"
+        cancelText="Cancel"
+      />
     </>
   );
 };

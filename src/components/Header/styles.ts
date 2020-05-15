@@ -50,6 +50,13 @@ export const Search = styled(Input)`
   max-width: 403px;
   max-height: 50px;
 
+  &:focus,
+  &:hover,
+  &:active,
+  .ant-input-affix-wrapper {
+    border-color: #ebeaed;
+  }
+
   &,
   input {
     text-align: left;
