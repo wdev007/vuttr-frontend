@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import GlobalStyles from './styles/global';
 import Routes from './routes';
+
+import history from './services/history';
 import { AppProvider } from './contexts/app';
 import { ToolProvider } from './contexts/tool';
 
@@ -11,7 +13,7 @@ const App: React.FC = () => (
     <GlobalStyles />
     <AppProvider>
       <ToolProvider>
-        <Router>
+        <Router history={history}>
           <Routes />
         </Router>
       </ToolProvider>

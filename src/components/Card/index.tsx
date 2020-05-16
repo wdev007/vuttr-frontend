@@ -13,7 +13,7 @@ const CardComponent: React.FC<Tool> = ({
 }) => (
   <CardContainer id={id}>
     <div className="actions-container">
-      <Link href={link || '#'} className={link ? '' : 'disabled'}>
+      <Link href={link || ''} className={link ? '' : 'disabled'}>
         {title}
       </Link>
       <ButtonRemove type="button">
