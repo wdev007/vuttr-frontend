@@ -31,6 +31,7 @@ const Dashboard: React.FC = () => {
       setTools((prevTools: Tool[]) => [...prevTools, data]);
       setVisible(false);
       setShow(false);
+      form.resetFields();
     } catch (error) {
       console.log(error);
     }

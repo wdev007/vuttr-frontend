@@ -67,7 +67,10 @@ const CardComponent: React.FC<Tool> = ({
         onCancel={closeModal}
         onOk={handleDelete}
       >
-        <p>Are you sure you want to remove {title}?</p>
+        <p>
+          Are you sure you want to remove
+          <strong className="text-negrito">{title}</strong> ?
+        </p>
       </Modal>
     </>
   );

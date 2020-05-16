@@ -58,5 +58,12 @@ export default createGlobalStyle`
   .ant-modal-header, .ant-modal-footer, .ant-modal-content {
     border-radius: 5px;
   }
+  .text-negrito {
+    font-weight: bold;
+    color: #000;
+  }
+  strong.text-negrito {
+    margin-left: 5px;
+  }
 
 `;
