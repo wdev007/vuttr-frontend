@@ -5,10 +5,11 @@ import { Title, SubTitle, SearchBar, Search, Check } from './styles';
 import AppContext from '../../contexts/app';
 
 const HeaderComponent: React.FC = () => {
-  const { setVisible } = useContext(AppContext);
+  const { setVisible, setShow } = useContext(AppContext);
 
   const showModal = (): void => {
     setVisible(true);
+    setShow(true);
   };
 
   return (

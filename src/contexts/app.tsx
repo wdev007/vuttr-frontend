@@ -5,9 +5,10 @@ const AppContext = createContext<AppContextData>({} as AppContextData);
 
 export const AppProvider: React.FC = ({ children }) => {
   const [visible, setVisible] = useState(false);
+  const [show, setShow] = useState(false);
 
   return (
-    <AppContext.Provider value={{ visible, setVisible }}>
+    <AppContext.Provider value={{ visible, setVisible, show, setShow }}>
       {children}
     </AppContext.Provider>
   );

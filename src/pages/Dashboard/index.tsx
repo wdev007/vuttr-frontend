@@ -14,7 +14,7 @@ import FormComponent from '../../components/Form';
 
 const Dashboard: React.FC = () => {
   const [form] = Form.useForm();
-  const { visible, setVisible } = useContext(AppContext);
+  const { visible, setVisible, show, setShow } = useContext(AppContext);
   const { tools, setTools } = useContext(ToolContext);
 
   const handleSubmit = async (): Promise<void> => {
@@ -30,9 +30,15 @@ const Dashboard: React.FC = () => {
 
       setTools((prevTools: Tool[]) => [...prevTools, data]);
       setVisible(false);
+      setShow(false);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const closeModal = (): void => {
+    setShow(false);
+    setVisible(false);
   };
 
   return (
@@ -50,8 +56,8 @@ const Dashboard: React.FC = () => {
       ))}
       <Modal
         iconTitle={PlusOutlined}
-        visible={visible}
-        onCancel={() => setVisible(false)}
+        visible={visible && show}
+        onCancel={closeModal}
         title="Add new tool"
         onOk={handleSubmit}
         okText="Add tool"

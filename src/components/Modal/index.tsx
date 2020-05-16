@@ -27,8 +27,14 @@ const ModalComponent: React.FC<Props> = ({
   <ModalContainer
     title={<Title description={title} icon={iconTitle} />}
     visible={visible}
-    onOk={onOk}
-    onCancel={onCancel}
+    onOk={() => {
+      onOk();
+      ModalContainer.destroyAll();
+    }}
+    onCancel={() => {
+      onCancel();
+      ModalContainer.destroyAll();
+    }}
     okText={okText}
     cancelText={cancelText}
   >
