@@ -10,7 +10,7 @@ export const ToolProvider: React.FC = ({ children }) => {
   useEffect(() => {
     async function loadData(): Promise<void> {
       const { data } = await api.get<Array<Tool>>('/tools');
-      setTools(prevTools => [...prevTools, ...data]);
+      setTools(data);
     }
     loadData();
   }, []);

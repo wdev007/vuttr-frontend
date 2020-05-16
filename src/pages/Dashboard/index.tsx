@@ -29,6 +29,7 @@ const Dashboard: React.FC = () => {
       });
 
       setTools((prevTools: Tool[]) => [...prevTools, data]);
+      // setTools(data);
       setVisible(false);
       setShow(false);
     } catch (error) {
@@ -47,7 +48,7 @@ const Dashboard: React.FC = () => {
       {tools.map(tool => (
         <Card
           id={tool.id}
-          key={tool.id}
+          key={`${tool.id}-${Date.now()}`}
           title={tool.title}
           description={tool.description}
           link={tool.link}
