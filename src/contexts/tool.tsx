@@ -16,7 +16,9 @@ export const ToolProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <ToolContext.Provider value={{ tools }}>{children}</ToolContext.Provider>
+    <ToolContext.Provider value={{ tools, setTools }}>
+      {children}
+    </ToolContext.Provider>
   );
 };
 

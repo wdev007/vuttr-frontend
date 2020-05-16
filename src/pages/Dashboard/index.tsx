@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { Form } from 'antd';
 
+import { Tool } from 'models';
+import api from '../../services/api';
+
 import AppContext from '../../contexts/app';
 import ToolContext from '../../contexts/tool';
 import Header from '../../components/Header';
@@ -12,7 +15,25 @@ import FormComponent from '../../components/Form';
 const Dashboard: React.FC = () => {
   const [form] = Form.useForm();
   const { visible, setVisible } = useContext(AppContext);
-  const { tools } = useContext(ToolContext);
+  const { tools, setTools } = useContext(ToolContext);
+
+  const handleSubmit = async (): Promise<void> => {
+    try {
+      const { title, link, description, tags } = await form.validateFields();
+
+      const { data } = await api.post<Tool>('/tools', {
+        title,
+        link,
+        description,
+        tags: tags.split(' '),
+      });
+
+      setTools((prevTools: Tool[]) => [...prevTools, data]);
+      setVisible(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -32,9 +53,7 @@ const Dashboard: React.FC = () => {
         visible={visible}
         onCancel={() => setVisible(false)}
         title="Add new tool"
-        onOk={() => {
-          console.log('aq');
-        }}
+        onOk={handleSubmit}
         okText="Add tool"
         cancelText="Cancel"
       >

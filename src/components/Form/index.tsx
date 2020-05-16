@@ -15,7 +15,7 @@ const FormComponent: React.FC<Props> = ({ formRef }) => {
       <Item name="title" label="Tool Name">
         <InputStyled type="text" placeholder="Name" />
       </Item>
-      <Item name="links" label="Tool Link">
+      <Item name="link" label="Tool Link">
         <InputStyled type="url" placeholder="Link..." />
       </Item>
       <Item name="description" label="Tool description">
