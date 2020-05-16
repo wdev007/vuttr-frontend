@@ -25,6 +25,7 @@ const ModalComponent: React.FC<Props> = ({
   cancelText,
 }) => (
   <ModalContainer
+    centered
     title={<Title description={title} icon={iconTitle} />}
     visible={visible}
     onOk={() => {
