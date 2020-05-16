@@ -35,6 +35,10 @@ export const CardContainer = styled.div`
       font-weight: bold;
       color: #000;
     }
+
+    strong.checked-tag {
+      background-color: #12db89;
+    }
   }
 
   div,

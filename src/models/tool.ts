@@ -4,4 +4,5 @@ export interface Tool {
   link: string;
   description: string;
   tags: Array<string>;
+  checkedTag?: string;
 }

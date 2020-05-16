@@ -5,7 +5,6 @@ import api from '../../services/api';
 
 import { Tool } from '../../models';
 import ToolContext from '../../contexts/tool';
-import AppContext from '../../contexts/app';
 import Modal from '../Modal';
 
 import { CardContainer, ButtonRemove, Link } from './styles';
@@ -16,19 +15,13 @@ const CardComponent: React.FC<Tool> = ({
   link = '',
   description,
   tags,
+  checkedTag,
 }) => {
   const [show, setShow] = useState(false);
-  const { visible, setVisible } = useContext(AppContext);
   const { setTools } = useContext(ToolContext);
-
-  const showModal = (): void => {
-    setShow(true);
-    setVisible(true);
-  };
 
   const closeModal = (): void => {
     setShow(false);
-    setVisible(false);
   };
 
   const handleDelete = async (): Promise<void> => {
@@ -48,17 +41,25 @@ const CardComponent: React.FC<Tool> = ({
           <Link href={link || ''} className={link ? '' : 'disabled'}>
             {title}
           </Link>
-          <ButtonRemove type="button" onClick={showModal}>
+          <ButtonRemove type="button" onClick={() => setShow(true)}>
             <AiOutlineClose /> remove
           </ButtonRemove>
         </div>
         <p>{description}</p>
         <div className="tags-container">
-          {tags.length && tags?.map(tag => <strong key={tag}>#{tag}</strong>)}
+          {tags.length &&
+            tags?.map(tag => (
+              <strong
+                key={tag}
+                className={checkedTag === tag ? 'checked-tag' : ''}
+              >
+                #{tag}
+              </strong>
+            ))}
         </div>
       </CardContainer>
       <Modal
-        visible={visible && show}
+        visible={show}
         iconTitle={AiOutlineClose}
         title="Remove tool"
         cancelText="Cancel"

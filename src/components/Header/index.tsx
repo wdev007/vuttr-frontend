@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { SearchOutlined, PlusOutlined } from '@ant-design/icons';
 
+import { Tool } from 'models';
 import api from '../../services/api';
 
 import { Title, SubTitle, SearchBar, Search, Check } from './styles';
@@ -27,8 +28,13 @@ const HeaderComponent: React.FC = () => {
         const url = check
           ? `/tools?tags_like=${debouncedSearch}`
           : `/tools?title=${debouncedSearch}`;
-        const { data } = await api.get(url);
-        setTools(data);
+        const { data } = await api.get<Tool[]>(url);
+        setTools(
+          data.map(tool => ({
+            ...tool,
+            checkedTag: debouncedSearch,
+          })),
+        );
       };
       search();
     } else {
