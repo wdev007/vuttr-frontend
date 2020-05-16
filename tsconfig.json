@@ -2,9 +2,16 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "build/lib",
-    "rootDirs": ["src", "stories"],
+    "rootDirs": [
+      "src",
+      "stories"
+    ],
     "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,10 +22,16 @@
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "resolveJsonModule": true,
-
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "isolatedModules": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts"
+  ]
 }
