@@ -1,11 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { Form } from 'antd';
-import api from '../../services/api';
-
-import { Tool } from '../../models/tool';
 
 import AppContext from '../../contexts/app';
+import ToolContext from '../../contexts/tool';
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 import Modal from '../../components/Modal';
@@ -14,15 +12,7 @@ import FormComponent from '../../components/Form';
 const Dashboard: React.FC = () => {
   const [form] = Form.useForm();
   const { visible, setVisible } = useContext(AppContext);
-  const [tools, setTools] = useState<Array<Tool>>([]);
-
-  useEffect(() => {
-    async function loadData(): Promise<void> {
-      const { data } = await api.get<Array<Tool>>('/tools');
-      setTools(prevTools => [...prevTools, ...data]);
-    }
-    loadData();
-  }, []);
+  const { tools } = useContext(ToolContext);
 
   return (
     <>
