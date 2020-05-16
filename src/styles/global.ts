@@ -55,5 +55,8 @@ export default createGlobalStyle`
   .ant-btn-primary:active {
     background: #244AA8 0% 0% no-repeat padding-box;
   }
+  .ant-modal-header, .ant-modal-footer, .ant-modal-content {
+    border-radius: 5px;
+  }
 
 `;

@@ -4,6 +4,9 @@ export const CardContainer = styled.div`
   height: 145px;
   width: 100%;
 
+  position: relative;
+  overflow: auto;
+
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #ebeaed;
   border-radius: 5px;
@@ -18,15 +21,39 @@ export const CardContainer = styled.div`
     box-shadow: 0px 5px 7px #0000000d;
   }
 
-  div {
+  div.actions-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  div.tags-container {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+
+    strong {
+      font-weight: bold;
+      color: #000;
+    }
   }
 
   div,
   p,
   strong {
     margin: 8px 8px 0;
+  }
+
+  @media (max-width: 585px) {
+    div.actions-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      a,
+      button {
+        margin-bottom: 10px;
+      }
+    }
   }
 `;
 
@@ -47,5 +74,13 @@ export const ButtonRemove = styled.button`
   }
   &:active {
     background: #a53f3f 0% 0% no-repeat padding-box;
+  }
+`;
+
+export const Link = styled.a`
+  font-size: 20px;
+
+  &.disabled {
+    pointer-events: none;
   }
 `;

@@ -4,11 +4,19 @@ import { Input, Checkbox } from 'antd';
 export const Title = styled.h1`
   font-size: 42px;
   color: #170c3a;
+
+  @media (max-width: 960px) {
+    text-align: center;
+  }
 `;
 
 export const SubTitle = styled.h4`
   font-size: 30px;
   color: #170c3a;
+
+  @media (max-width: 960px) {
+    text-align: center;
+  }
 `;
 
 export const SearchBar = styled.div`
@@ -43,6 +51,26 @@ export const SearchBar = styled.div`
   button:active {
     background: #244aa8 0% 0% no-repeat padding-box;
   }
+
+  @media (max-width: 960px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    div {
+      flex-direction: column;
+      width: auto;
+    }
+    div > span {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
 `;
 
 export const Search = styled(Input)`
@@ -73,6 +101,13 @@ export const Search = styled(Input)`
     letter-spacing: 0.4px;
     color: #b1adb9;
     opacity: 1;
+  }
+
+  @media (max-width: 960px) {
+    width: 400px;
+  }
+  @media (max-width: 585px) {
+    width: 260px;
   }
 `;
 

@@ -1,14 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
+import { PlusOutlined } from '@ant-design/icons';
+import { Form } from 'antd';
 import api from '../../services/api';
+
+import { Tool } from '../../models/tool';
 
 import AppContext from '../../contexts/app';
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 import Modal from '../../components/Modal';
-import { Tool } from '../../models/tool';
+import FormComponent from '../../components/Form';
 
 const Dashboard: React.FC = () => {
+  const [form] = Form.useForm();
   const { visible, setVisible } = useContext(AppContext);
   const [tools, setTools] = useState<Array<Tool>>([]);
 
@@ -34,7 +38,7 @@ const Dashboard: React.FC = () => {
         />
       ))}
       <Modal
-        iconTitle={AiOutlineClose}
+        iconTitle={PlusOutlined}
         visible={visible}
         onCancel={() => setVisible(false)}
         title="Add new tool"
@@ -43,7 +47,9 @@ const Dashboard: React.FC = () => {
         }}
         okText="Add tool"
         cancelText="Cancel"
-      />
+      >
+        <FormComponent formRef={form} />
+      </Modal>
     </>
   );
 };

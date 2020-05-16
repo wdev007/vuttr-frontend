@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import { Tool } from '../../models/tool';
-import { CardContainer, ButtonRemove } from './styles';
+import { CardContainer, ButtonRemove, Link } from './styles';
 
 const CardComponent: React.FC<Tool> = ({
   id,
@@ -12,14 +12,18 @@ const CardComponent: React.FC<Tool> = ({
   tags,
 }) => (
   <CardContainer id={id}>
-    <div>
-      <a href={link}>{title}</a>
+    <div className="actions-container">
+      <Link href={link || '#'} className={link ? '' : 'disabled'}>
+        {title}
+      </Link>
       <ButtonRemove type="button">
         <AiOutlineClose /> remove
       </ButtonRemove>
     </div>
     <p>{description}</p>
-    {tags.length && tags?.map(tag => <strong key={tag}>#{tag}</strong>)}
+    <div className="tags-container">
+      {tags.length && tags?.map(tag => <strong key={tag}>#{tag}</strong>)}
+    </div>
   </CardContainer>
 );
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal } from 'antd';
+
+import { ModalContainer } from './styles';
 
 import Title from './Title';
 
@@ -23,7 +24,7 @@ const ModalComponent: React.FC<Props> = ({
   okText,
   cancelText,
 }) => (
-  <Modal
+  <ModalContainer
     title={<Title description={title} icon={iconTitle} />}
     visible={visible}
     onOk={onOk}
@@ -32,7 +33,7 @@ const ModalComponent: React.FC<Props> = ({
     cancelText={cancelText}
   >
     {children}
-  </Modal>
+  </ModalContainer>
 );
 
 export default ModalComponent;
