@@ -1,44 +1,97 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# VUTTR - Very Useful Tools to Remember
 
-## Available Scripts
+<p>Gerenciador de ferramentas com seus respectivos nomes, links, descrições e tags.</p>
 
-In the project directory, you can run:
+Build Status: [![CircleCI](https://circleci.com/gh/wellici-js/vuttr-frontend.svg?style=svg)](https://circleci.com/gh/wellici-js/vuttr-frontend)
+Size: ![GitHub](https://img.shields.io/github/repo-size/wellici-js/vuttr-frontend)
 
-### `yarn start`
+## Table of contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Getting Started](#getting-started)
+- [Dependences](#dependences)
+- [Development environment](#development-environment)
+- [Documentation and Testes](#documentation)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
+- The project depends on a backend to work, it can be the [API made in node](https://gitlab.com/wellici-js/bossabox-backend.git) or the one made available by the challenge [api-challenge](https://gitlab.com/bossabox/challenge-fake-api/tree/master).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependences
 
-### `yarn build`
+- You need to have installed:
+  > node >= V10
+  > npm or yarn
+  > json-server
+  > Browser of your choice
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development environment
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Install repository back-end:
+  - API node:
+    [steps](https://gitlab.com/wellici-js/bossabox-backend)
+  - API challenge:
+  ```sh
+    $ git clone https://gitlab.com/bossabox/challenge-fake-api/tree/master
+    $ cd challenge-fake-api
+    $ json-server --watch db.json --port 3000
+  ```
+- Install repository front-end:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ```sh
+    $ git clone https://github.com/wellici-js/vuttr-frontend.git
+  ```
 
-### `yarn eject`
+- Rename the file:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ```sh
+    $ cp .env.example .env
+  ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- overwrite information in .env
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  ```
+    REACT_APP_API_URL=urltoapplicationbackend
+  ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Install dependences:
 
-## Learn More
+  ```sh
+    $ yarn
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - or
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ```sh
+    $ npm i
+  ```
+
+- Run:
+
+  ```sh
+    $ yarn start
+  ```
+
+  - or
+
+  ```sh
+    $ npm run start
+  ```
+
+## Documentation
+
+- To see the application component documentation:
+  ```sh
+    $ yarn storybook
+  ```
+  or
+  ```sh
+    $ npm run storybook
+  ```
+- To run Testes:
+  ```sh
+    $ yarn test
+  ```
+  - or
+  ```sh
+    $ npm run test
+  ```
