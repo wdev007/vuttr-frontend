@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render correctly with no props 1`] = `
+<Fragment>
+  <styled.div
+    id="Notion"
+  >
+    <div
+      className="actions-container"
+    >
+      <styled.a
+        className=""
+        href="https://notion.so"
+        id="card-title"
+      >
+        Notion
+      </styled.a>
+      <styled.button
+        onClick={[Function]}
+        type="button"
+      >
+        <AiOutlineClose />
+         remove
+      </styled.button>
+    </div>
+    <p>
+      All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. 
+    </p>
+    <div
+      className="tags-container"
+    >
+      <strong
+        className=""
+        key="organization"
+      >
+        #
+        organization
+      </strong>
+      <strong
+        className=""
+        key="planning"
+      >
+        #
+        planning
+      </strong>
+      <strong
+        className=""
+        key="collaboration"
+      >
+        #
+        collaboration
+      </strong>
+      <strong
+        className=""
+        key="writing"
+      >
+        #
+        writing
+      </strong>
+      <strong
+        className=""
+        key="calendar"
+      >
+        #
+        calendar
+      </strong>
+    </div>
+  </styled.div>
+  <ModalComponent
+    cancelText="Cancel"
+    iconTitle={[Function]}
+    okText="Yes, remove"
+    onCancel={[Function]}
+    onOk={[Function]}
+    title="Remove tool"
+    visible={false}
+  >
+    <p>
+      Are you sure you want to remove
+      <strong
+        className="text-negrito"
+      >
+        Notion
+      </strong>
+       ?
+    </p>
+  </ModalComponent>
+</Fragment>
+`;
