@@ -19,10 +19,10 @@ Size: ![GitHub](https://img.shields.io/github/repo-size/wellici-js/vuttr-fronten
 ## Dependences
 
 - You need to have installed:
-  > node >= V10
-  > npm or yarn
-  > json-server
-  > Browser of your choice
+  > - node >= V10
+  > - npm or yarn
+  > - json-server
+  > - Browser of your choice
 
 ## Development environment
 
